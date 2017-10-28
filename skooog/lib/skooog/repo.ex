@@ -1,6 +1,5 @@
 defmodule Skooog.Repo do
-  use Ecto.Repo, otp_app: :skooog
-
+  use Ecto.Repo, otp_app: :skooog, adapter: Ecto.Adapters.Postgres
   @doc """
   Dynamically loads the repository url from the
   DATABASE_URL environment variable.
