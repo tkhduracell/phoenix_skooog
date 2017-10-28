@@ -1,0 +1,40 @@
+<h2>Listing Objects</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Supplier</th>
+      <th>Location</th>
+      <th>Deforestation submission date</th>
+      <th>Deforestation confirmed date</th>
+      <th>Area</th>
+      <th>Preliminary volume</th>
+      <th>Sticks</th>
+      <th>Sticks volume</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for object <- @objects do %>
+    <tr>
+      <td><%= object.supplier %></td>
+      <td><%= object.location %></td>
+      <td><%= object.deforestation_submission_date %></td>
+      <td><%= object.deforestation_confirmed_date %></td>
+      <td><%= object.area %></td>
+      <td><%= object.preliminary_volume %></td>
+      <td><%= object.sticks %></td>
+      <td><%= object.sticks_volume %></td>
+
+      <td class="text-right">
+        <span><%= link "Show", to: object_path(@conn, :show, object), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Edit", to: object_path(@conn, :edit, object), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Delete", to: object_path(@conn, :delete, object), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Object", to: object_path(@conn, :new) %></span>

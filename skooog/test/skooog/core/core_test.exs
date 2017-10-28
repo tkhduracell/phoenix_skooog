@@ -62,4 +62,138 @@ defmodule Skooog.CoreTest do
       assert %Ecto.Changeset{} = Core.change_actor(actor)
     end
   end
+
+  describe "buyers" do
+    alias Skooog.Core.Buyer
+
+    @valid_attrs %{name: "some name"}
+    @update_attrs %{name: "some updated name"}
+    @invalid_attrs %{name: nil}
+
+    def buyer_fixture(attrs \\ %{}) do
+      {:ok, buyer} =
+        attrs
+        |> Enum.into(@valid_attrs)
+        |> Core.create_buyer()
+
+      buyer
+    end
+
+    test "list_buyers/0 returns all buyers" do
+      buyer = buyer_fixture()
+      assert Core.list_buyers() == [buyer]
+    end
+
+    test "get_buyer!/1 returns the buyer with given id" do
+      buyer = buyer_fixture()
+      assert Core.get_buyer!(buyer.id) == buyer
+    end
+
+    test "create_buyer/1 with valid data creates a buyer" do
+      assert {:ok, %Buyer{} = buyer} = Core.create_buyer(@valid_attrs)
+      assert buyer.name == "some name"
+    end
+
+    test "create_buyer/1 with invalid data returns error changeset" do
+      assert {:error, %Ecto.Changeset{}} = Core.create_buyer(@invalid_attrs)
+    end
+
+    test "update_buyer/2 with valid data updates the buyer" do
+      buyer = buyer_fixture()
+      assert {:ok, buyer} = Core.update_buyer(buyer, @update_attrs)
+      assert %Buyer{} = buyer
+      assert buyer.name == "some updated name"
+    end
+
+    test "update_buyer/2 with invalid data returns error changeset" do
+      buyer = buyer_fixture()
+      assert {:error, %Ecto.Changeset{}} = Core.update_buyer(buyer, @invalid_attrs)
+      assert buyer == Core.get_buyer!(buyer.id)
+    end
+
+    test "delete_buyer/1 deletes the buyer" do
+      buyer = buyer_fixture()
+      assert {:ok, %Buyer{}} = Core.delete_buyer(buyer)
+      assert_raise Ecto.NoResultsError, fn -> Core.get_buyer!(buyer.id) end
+    end
+
+    test "change_buyer/1 returns a buyer changeset" do
+      buyer = buyer_fixture()
+      assert %Ecto.Changeset{} = Core.change_buyer(buyer)
+    end
+  end
+
+  describe "objects" do
+    alias Skooog.Core.Object
+
+    @valid_attrs %{area: "120.5", deforestation_confirmed_date: ~D[2010-04-17], deforestation_submission_date: ~D[2010-04-17], location: "some location", preliminary_volume: "120.5", sticks: true, sticks_volume: "120.5", supplier: "some supplier"}
+    @update_attrs %{area: "456.7", deforestation_confirmed_date: ~D[2011-05-18], deforestation_submission_date: ~D[2011-05-18], location: "some updated location", preliminary_volume: "456.7", sticks: false, sticks_volume: "456.7", supplier: "some updated supplier"}
+    @invalid_attrs %{area: nil, deforestation_confirmed_date: nil, deforestation_submission_date: nil, location: nil, preliminary_volume: nil, sticks: nil, sticks_volume: nil, supplier: nil}
+
+    def object_fixture(attrs \\ %{}) do
+      {:ok, object} =
+        attrs
+        |> Enum.into(@valid_attrs)
+        |> Core.create_object()
+
+      object
+    end
+
+    test "list_objects/0 returns all objects" do
+      object = object_fixture()
+      assert Core.list_objects() == [object]
+    end
+
+    test "get_object!/1 returns the object with given id" do
+      object = object_fixture()
+      assert Core.get_object!(object.id) == object
+    end
+
+    test "create_object/1 with valid data creates a object" do
+      assert {:ok, %Object{} = object} = Core.create_object(@valid_attrs)
+      assert object.area == Decimal.new("120.5")
+      assert object.deforestation_confirmed_date == ~D[2010-04-17]
+      assert object.deforestation_submission_date == ~D[2010-04-17]
+      assert object.location == "some location"
+      assert object.preliminary_volume == Decimal.new("120.5")
+      assert object.sticks == true
+      assert object.sticks_volume == Decimal.new("120.5")
+      assert object.supplier == "some supplier"
+    end
+
+    test "create_object/1 with invalid data returns error changeset" do
+      assert {:error, %Ecto.Changeset{}} = Core.create_object(@invalid_attrs)
+    end
+
+    test "update_object/2 with valid data updates the object" do
+      object = object_fixture()
+      assert {:ok, object} = Core.update_object(object, @update_attrs)
+      assert %Object{} = object
+      assert object.area == Decimal.new("456.7")
+      assert object.deforestation_confirmed_date == ~D[2011-05-18]
+      assert object.deforestation_submission_date == ~D[2011-05-18]
+      assert object.location == "some updated location"
+      assert object.preliminary_volume == Decimal.new("456.7")
+      assert object.sticks == false
+      assert object.sticks_volume == Decimal.new("456.7")
+      assert object.supplier == "some updated supplier"
+    end
+
+    test "update_object/2 with invalid data returns error changeset" do
+      object = object_fixture()
+      assert {:error, %Ecto.Changeset{}} = Core.update_object(object, @invalid_attrs)
+      assert object == Core.get_object!(object.id)
+    end
+
+    test "delete_object/1 deletes the object" do
+      object = object_fixture()
+      assert {:ok, %Object{}} = Core.delete_object(object)
+      assert_raise Ecto.NoResultsError, fn -> Core.get_object!(object.id) end
+    end
+
+    test "change_object/1 returns a object changeset" do
+      object = object_fixture()
+      assert %Ecto.Changeset{} = Core.change_object(object)
+    end
+  end
 end

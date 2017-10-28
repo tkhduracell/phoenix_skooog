@@ -1,0 +1,5 @@
+<h2>New Buyer</h2>
+
+<%= render "form.html", Map.put(assigns, :action, buyer_path(@conn, :create)) %>
+
+<span><%= link "Back", to: buyer_path(@conn, :index) %></span>

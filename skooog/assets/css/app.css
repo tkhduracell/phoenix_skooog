@@ -1,1 +1,5 @@
 /* This file is for your main application css. */
+
+ul li .btn {
+    margin: 4px 0;
+}

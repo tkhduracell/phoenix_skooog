@@ -1,0 +1,48 @@
+<h2>Show Object</h2>
+
+<ul>
+
+  <li>
+    <strong>Supplier:</strong>
+    <%= @object.supplier %>
+  </li>
+
+  <li>
+    <strong>Location:</strong>
+    <%= @object.location %>
+  </li>
+
+  <li>
+    <strong>Deforestation submission date:</strong>
+    <%= @object.deforestation_submission_date %>
+  </li>
+
+  <li>
+    <strong>Deforestation confirmed date:</strong>
+    <%= @object.deforestation_confirmed_date %>
+  </li>
+
+  <li>
+    <strong>Area:</strong>
+    <%= @object.area %>
+  </li>
+
+  <li>
+    <strong>Preliminary volume:</strong>
+    <%= @object.preliminary_volume %>
+  </li>
+
+  <li>
+    <strong>Sticks:</strong>
+    <%= @object.sticks %>
+  </li>
+
+  <li>
+    <strong>Sticks volume:</strong>
+    <%= @object.sticks_volume %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: object_path(@conn, :edit, @object) %></span>
+<span><%= link "Back", to: object_path(@conn, :index) %></span>

@@ -101,4 +101,196 @@ defmodule Skooog.Core do
   def change_actor(%Actor{} = actor) do
     Actor.changeset(actor, %{})
   end
+
+  alias Skooog.Core.Buyer
+
+  @doc """
+  Returns the list of buyers.
+
+  ## Examples
+
+      iex> list_buyers()
+      [%Buyer{}, ...]
+
+  """
+  def list_buyers do
+    Repo.all(Buyer)
+  end
+
+  @doc """
+  Gets a single buyer.
+
+  Raises `Ecto.NoResultsError` if the Buyer does not exist.
+
+  ## Examples
+
+      iex> get_buyer!(123)
+      %Buyer{}
+
+      iex> get_buyer!(456)
+      ** (Ecto.NoResultsError)
+
+  """
+  def get_buyer!(id), do: Repo.get!(Buyer, id)
+
+  @doc """
+  Creates a buyer.
+
+  ## Examples
+
+      iex> create_buyer(%{field: value})
+      {:ok, %Buyer{}}
+
+      iex> create_buyer(%{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def create_buyer(attrs \\ %{}) do
+    %Buyer{}
+    |> Buyer.changeset(attrs)
+    |> Repo.insert()
+  end
+
+  @doc """
+  Updates a buyer.
+
+  ## Examples
+
+      iex> update_buyer(buyer, %{field: new_value})
+      {:ok, %Buyer{}}
+
+      iex> update_buyer(buyer, %{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def update_buyer(%Buyer{} = buyer, attrs) do
+    buyer
+    |> Buyer.changeset(attrs)
+    |> Repo.update()
+  end
+
+  @doc """
+  Deletes a Buyer.
+
+  ## Examples
+
+      iex> delete_buyer(buyer)
+      {:ok, %Buyer{}}
+
+      iex> delete_buyer(buyer)
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def delete_buyer(%Buyer{} = buyer) do
+    Repo.delete(buyer)
+  end
+
+  @doc """
+  Returns an `%Ecto.Changeset{}` for tracking buyer changes.
+
+  ## Examples
+
+      iex> change_buyer(buyer)
+      %Ecto.Changeset{source: %Buyer{}}
+
+  """
+  def change_buyer(%Buyer{} = buyer) do
+    Buyer.changeset(buyer, %{})
+  end
+
+  alias Skooog.Core.Object
+
+  @doc """
+  Returns the list of objects.
+
+  ## Examples
+
+      iex> list_objects()
+      [%Object{}, ...]
+
+  """
+  def list_objects do
+    Repo.all(Object)
+  end
+
+  @doc """
+  Gets a single object.
+
+  Raises `Ecto.NoResultsError` if the Object does not exist.
+
+  ## Examples
+
+      iex> get_object!(123)
+      %Object{}
+
+      iex> get_object!(456)
+      ** (Ecto.NoResultsError)
+
+  """
+  def get_object!(id), do: Repo.get!(Object, id)
+
+  @doc """
+  Creates a object.
+
+  ## Examples
+
+      iex> create_object(%{field: value})
+      {:ok, %Object{}}
+
+      iex> create_object(%{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def create_object(attrs \\ %{}) do
+    %Object{}
+    |> Object.changeset(attrs)
+    |> Repo.insert()
+  end
+
+  @doc """
+  Updates a object.
+
+  ## Examples
+
+      iex> update_object(object, %{field: new_value})
+      {:ok, %Object{}}
+
+      iex> update_object(object, %{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def update_object(%Object{} = object, attrs) do
+    object
+    |> Object.changeset(attrs)
+    |> Repo.update()
+  end
+
+  @doc """
+  Deletes a Object.
+
+  ## Examples
+
+      iex> delete_object(object)
+      {:ok, %Object{}}
+
+      iex> delete_object(object)
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def delete_object(%Object{} = object) do
+    Repo.delete(object)
+  end
+
+  @doc """
+  Returns an `%Ecto.Changeset{}` for tracking object changes.
+
+  ## Examples
+
+      iex> change_object(object)
+      %Ecto.Changeset{source: %Object{}}
+
+  """
+  def change_object(%Object{} = object) do
+    Object.changeset(object, %{})
+  end
 end

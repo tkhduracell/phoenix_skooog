@@ -9,7 +9,13 @@
     <h4>Interfaces</h4>
     <ul>
       <li>
+        <%= button("Objects", to: object_path(@conn, :index), method: "get", class: "btn btn-sm btn-default") %>
+      </li>
+      <li>
         <%= button("Actors", to: actor_path(@conn, :index), method: "get", class: "btn btn-sm btn-default") %>
+      </li>
+      <li>
+        <%= button("Buyers", to: buyer_path(@conn, :index), method: "get", class: "btn btn-sm btn-default") %>
       </li>
     </ul>
   </div>

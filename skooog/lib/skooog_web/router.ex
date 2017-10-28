@@ -18,7 +18,9 @@ defmodule SkooogWeb.Router do
 
     get "/", PageController, :index
 
+    resources "/objects", ObjectController
     resources "/actors", ActorController
+    resources "/buyers", BuyerController
   end
 
 end
