@@ -14,13 +14,13 @@
       <td><%= buyer.name %></td>
 
       <td class="text-right">
-        <span><%= link "Show", to: buyer_path(@conn, :show, buyer), class: "btn btn-default btn-xs" %></span>
-        <span><%= link "Edit", to: buyer_path(@conn, :edit, buyer), class: "btn btn-default btn-xs" %></span>
-        <span><%= link "Delete", to: buyer_path(@conn, :delete, buyer), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+        <span><%= link gettext("Show"), to: buyer_path(@conn, :show, buyer), class: "btn btn-default btn-xs" %></span>
+        <span><%= link gettext("Edit"), to: buyer_path(@conn, :edit, buyer), class: "btn btn-default btn-xs" %></span>
+        <span><%= link gettext("Delete"), to: buyer_path(@conn, :delete, buyer), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
       </td>
     </tr>
 <% end %>
   </tbody>
 </table>
 
-<span><%= link "New Buyer", to: buyer_path(@conn, :new), class: "btn btn-sm btn-primary" %></span>
+<span><%= link gettext("New Buyer"), to: buyer_path(@conn, :new), class: "btn btn-sm btn-primary" %></span>

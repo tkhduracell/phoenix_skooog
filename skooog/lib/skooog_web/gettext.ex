@@ -20,5 +20,5 @@ defmodule SkooogWeb.Gettext do
 
   See the [Gettext Docs](https://hexdocs.pm/gettext) for detailed usage.
   """
-  use Gettext, otp_app: :skooog
+  use Gettext, otp_app: :skooog, default_locale: :sv_SE
 end

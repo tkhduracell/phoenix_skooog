@@ -1,48 +1,47 @@
-<h2>Show Object</h2>
+<h2><%= gettext("Show %{type}", type: gettext("Object"))%></h2>
 
 <ul>
-
   <li>
-    <strong>Supplier:</strong>
+    <strong><%= gettext("Supplier") %>:</strong>
     <%= @object.supplier %>
   </li>
 
   <li>
-    <strong>Location:</strong>
+    <strong><%= gettext("Location") %>:</strong>
     <%= @object.location %>
   </li>
 
   <li>
-    <strong>Deforestation submission date:</strong>
+    <strong><%= gettext("Deforestation submission date") %>:</strong>
     <%= @object.deforestation_submission_date %>
   </li>
 
   <li>
-    <strong>Deforestation confirmed date:</strong>
+    <strong><%= gettext("Deforestation confirmed date") %>:</strong>
     <%= @object.deforestation_confirmed_date %>
   </li>
 
   <li>
-    <strong>Area:</strong>
+    <strong><%= gettext("Area") %>:</strong>
     <%= @object.area %>
   </li>
 
   <li>
-    <strong>Preliminary volume:</strong>
+    <strong><%= gettext("Preliminary volume") %>:</strong>
     <%= @object.preliminary_volume %>
   </li>
 
   <li>
-    <strong>Sticks:</strong>
+    <strong><%= gettext("Sticks") %>:</strong>
     <%= @object.sticks %>
   </li>
 
   <li>
-    <strong>Sticks volume:</strong>
+    <strong><%= gettext("Sticks volume") %>:</strong>
     <%= @object.sticks_volume %>
   </li>
 
 </ul>
 
-<span><%= link "Edit", to: object_path(@conn, :edit, @object) %></span>
-<span><%= link "Back", to: object_path(@conn, :index) %></span>
+<span><%= link gettext("Back"), to: object_path(@conn, :index),class: "btn btn-primary btn-xs" %></span>
+<span><%= link gettext("Edit"), to: object_path(@conn, :edit, @object), class: "btn btn-default btn-xs" %></span>

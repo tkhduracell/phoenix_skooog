@@ -1,16 +1,16 @@
-<h2>Listing Objects</h2>
+<h2><%= gettext("Listing Objects") %></h2>
 
 <table class="table">
   <thead>
     <tr>
-      <th>Supplier</th>
-      <th>Location</th>
-      <th>Deforestation submission date</th>
-      <th>Deforestation confirmed date</th>
-      <th>Area</th>
-      <th>Preliminary volume</th>
-      <th>Sticks</th>
-      <th>Sticks volume</th>
+      <th><%= gettext "Supplier" %></th>
+      <th><%= gettext "Location" %></th>
+      <th><%= gettext "Deforestation submission date" %></th>
+      <th><%= gettext "Deforestation confirmed date" %></th>
+      <th><%= gettext "Area" %></th>
+      <th><%= gettext "Preliminary volume" %></th>
+      <th><%= gettext "Sticks" %></th>
+      <th><%= gettext "Sticks volume" %></th>
 
       <th></th>
     </tr>
@@ -28,13 +28,13 @@
       <td><%= object.sticks_volume %></td>
 
       <td class="text-right">
-        <span><%= link "Show", to: object_path(@conn, :show, object), class: "btn btn-default btn-xs" %></span>
-        <span><%= link "Edit", to: object_path(@conn, :edit, object), class: "btn btn-default btn-xs" %></span>
-        <span><%= link "Delete", to: object_path(@conn, :delete, object), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+        <span><%= link gettext("Show"), to: object_path(@conn, :show, object), class: "btn btn-default btn-xs" %></span>
+        <span><%= link gettext("Edit"), to: object_path(@conn, :edit, object), class: "btn btn-default btn-xs" %></span>
+        <span><%= link gettext("Delete"), to: object_path(@conn, :delete, object), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
       </td>
     </tr>
 <% end %>
   </tbody>
 </table>
 
-<span><%= link "New Object", to: object_path(@conn, :new) %></span>
+<span><%= link gettext("New Object"), to: object_path(@conn, :new), class: "btn btn-primary btn-lg" %></span>
