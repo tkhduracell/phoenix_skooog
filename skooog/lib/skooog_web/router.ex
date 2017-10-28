@@ -17,10 +17,8 @@ defmodule SkooogWeb.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+
+    resources "/actors", ActorController
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", SkooogWeb do
-  #   pipe_through :api
-  # end
 end

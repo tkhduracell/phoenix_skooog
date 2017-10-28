@@ -1,0 +1,13 @@
+<h2>Actor (<%= @actor.id %>)</h2>
+
+<ul>
+
+  <li>
+    <strong>Title:</strong>
+    <%= @actor.title %>
+  </li>
+
+</ul>
+
+<span><%= link "Back", to: actor_path(@conn, :index), class: "btn btn-primary btn-xs" %></span>
+<span><%= link "Edit", to: actor_path(@conn, :edit, @actor), class: "btn btn-default btn-xs"%></span>

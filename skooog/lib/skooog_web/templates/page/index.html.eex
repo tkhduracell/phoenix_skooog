@@ -1,6 +1,6 @@
 <div class="jumbotron">
   <h2><%= gettext "Welcome to %{name}!", name: "Skooog" %></h2>
-  <p class="lead">A productive web framework that<br />does not compromise speed and maintainability.</p>
+  <p class="lead">A productive forestery framework that<br />does not compromise speed and maintainability.</p>
 </div>
 
 <div class="row">
@@ -8,7 +8,9 @@
   <div class="col-lg-6">
     <h4>Interfaces</h4>
     <ul>
-      <li>Admin</li>
+      <li>
+        <%= button("Actors", to: actor_path(@conn, :index), method: "get", class: "btn btn-sm btn-default") %>
+      </li>
     </ul>
   </div>
 
