@@ -15,13 +15,12 @@ defmodule SkooogWeb.Router do
   end
 
   scope "/", SkooogWeb do
-    pipe_through :browser # Use the default browser stack
+    pipe_through :browser 
 
     get "/", PageController, :index
 
     resources "/objects", ObjectController
     resources "/actors", ActorController
-    resources "/buyers", BuyerController
   end
 
 end

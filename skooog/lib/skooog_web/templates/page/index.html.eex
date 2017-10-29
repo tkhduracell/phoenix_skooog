@@ -1,6 +1,9 @@
 <div class="jumbotron">
   <h2><%= gettext "Welcome to %{name}!", name: "Skooog" %></h2>
-  <p class="lead">A productive forestery framework that<br />does not compromise speed and maintainability.</p>
+  <p class="lead">
+    A productive forestery framework that<br />
+    does not compromise speed and maintainability.
+  </p>
 </div>
 
 <div class="row">
@@ -14,8 +17,9 @@
       <li>
         <%= button(gettext("Actors"), to: actor_path(@conn, :index), method: "get", class: "btn btn-sm btn-default") %>
       </li>
+
       <li>
-        <%= button(gettext("Buyers"), to: buyer_path(@conn, :index), method: "get", class: "btn btn-sm btn-default") %>
+        <%= button(gettext("Log in"), to: "/auth/auth0", method: "get", class: "btn btn-sm btn-default") %>
       </li>
     </ul>
   </div>
