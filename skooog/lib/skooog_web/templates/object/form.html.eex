@@ -1,66 +1,69 @@
 <%= form_for @changeset, @action, fn f -> %>
   <%= if @changeset.action do %>
     <div class="alert alert-danger">
-      <p>Oops, something went wrong! Please check the errors below.</p>
+      <p>
+        <%= gettext "Oops, something went wrong!" %> 
+        <%= gettext "Please check the errors below." %>
+      </p>
     </div>
   <% end %>
 
   <div class="form-group">
-    <%= label f, :type, class: "control-label" %>
+    <%= label f, :type, gettext("Object Type"), class: "control-label" %>
     <%= select f, :type, ObjectTypeEnum.__enum_map__(), class: "form-control" %>
     <%= error_tag f, :type %>
   </div>
 
   <div class="form-group">
-    <%= label f, :business_status, class: "control-label" %>
+    <%= label f, :business_status, gettext("Business Status"), class: "control-label" %>
     <%= select f, :business_status, ObjectBusinessStatusEnum.__enum_map__(), class: "form-control" %>
     <%= error_tag f, :business_status %>
   </div>
 
   <div class="form-group">
-    <%= label f, :supplier, class: "control-label" %>
+    <%= label f, :supplier, gettext("Supplier"), class: "control-label" %>
     <%= text_input f, :supplier, class: "form-control" %>
     <%= error_tag f, :supplier %>
   </div>
 
   <div class="form-group">
-    <%= label f, :location, class: "control-label" %>
+    <%= label f, :location, gettext("Location"), class: "control-label" %>
     <%= text_input f, :location, class: "form-control" %>
     <%= error_tag f, :location %>
   </div>
 
   <div class="form-group">
-    <%= label f, :deforestation_submission_date, class: "control-label" %>
+    <%= label f, :deforestation_submission_date, gettext("Deforestation submission date"), class: "control-label" %>
     <div><%= date_select f, :deforestation_submission_date, class: "form-control" %></div>
     <%= error_tag f, :deforestation_submission_date %>
   </div>
 
   <div class="form-group">
-    <%= label f, :deforestation_confirmed_date, class: "control-label" %>
+    <%= label f, :deforestation_confirmed_date, gettext("Deforestation confirmed date"), class: "control-label" %>
     <div><%= date_select f, :deforestation_confirmed_date, class: "form-control" %></div>
     <%= error_tag f, :deforestation_confirmed_date %>
   </div>
 
   <div class="form-group">
-    <%= label f, :area, class: "control-label" %>
+    <%= label f, :area, gettext("Area"), class: "control-label" %>
     <%= number_input f, :area, step: "any", class: "form-control" %>
     <%= error_tag f, :area %>
   </div>
 
   <div class="form-group">
-    <%= label f, :preliminary_volume, class: "control-label" %>
+    <%= label f, :preliminary_volume, gettext("Preliminary volume"), class: "control-label" %>
     <%= number_input f, :preliminary_volume, step: "any", class: "form-control" %>
     <%= error_tag f, :preliminary_volume %>
   </div>
 
   <div class="form-group">
-    <%= label f, :sticks, class: "control-label" %>
+    <%= label f, :sticks, gettext("Sticks"), class: "control-label" %>
     <%= checkbox f, :sticks, class: "checkbox" %>
     <%= error_tag f, :sticks %>
   </div>
 
   <div class="form-group">
-    <%= label f, :sticks_volume, class: "control-label" %>
+    <%= label f, :sticks_volume, gettext("Sticks volume"), class: "control-label" %>
     <%= number_input f, :sticks_volume, step: "any", class: "form-control" %>
     <%= error_tag f, :sticks_volume %>
   </div>

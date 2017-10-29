@@ -11,13 +11,15 @@
 msgid "Objects"
 msgstr ""
 
-#: lib/skooog_web/templates/object/index.html.eex:6
-#: lib/skooog_web/templates/object/show.html.eex:5
+#: lib/skooog_web/templates/object/form.html.eex:24
+#: lib/skooog_web/templates/object/index.html.eex:8
+#: lib/skooog_web/templates/object/show.html.eex:15
 msgid "Supplier"
 msgstr ""
 
-#: lib/skooog_web/templates/object/index.html.eex:7
-#: lib/skooog_web/templates/object/show.html.eex:10
+#: lib/skooog_web/templates/object/form.html.eex:30
+#: lib/skooog_web/templates/object/index.html.eex:9
+#: lib/skooog_web/templates/object/show.html.eex:20
 msgid "Location"
 msgstr ""
 
@@ -29,8 +31,9 @@ msgstr ""
 msgid "Actors"
 msgstr ""
 
-#: lib/skooog_web/templates/object/index.html.eex:10
-#: lib/skooog_web/templates/object/show.html.eex:25
+#: lib/skooog_web/templates/object/form.html.eex:48
+#: lib/skooog_web/templates/object/index.html.eex:12
+#: lib/skooog_web/templates/object/show.html.eex:35
 msgid "Area"
 msgstr ""
 
@@ -38,24 +41,26 @@ msgstr ""
 msgid "Buyers"
 msgstr ""
 
-#: lib/skooog_web/templates/object/index.html.eex:9
-#: lib/skooog_web/templates/object/show.html.eex:20
+#: lib/skooog_web/templates/object/form.html.eex:42
+#: lib/skooog_web/templates/object/index.html.eex:11
+#: lib/skooog_web/templates/object/show.html.eex:30
 msgid "Deforestation confirmed date"
 msgstr ""
 
-#: lib/skooog_web/templates/object/index.html.eex:8
-#: lib/skooog_web/templates/object/show.html.eex:15
+#: lib/skooog_web/templates/object/form.html.eex:36
+#: lib/skooog_web/templates/object/index.html.eex:10
+#: lib/skooog_web/templates/object/show.html.eex:25
 msgid "Deforestation submission date"
 msgstr ""
 
 #: lib/skooog_web/templates/buyer/index.html.eex:19
-#: lib/skooog_web/templates/object/index.html.eex:33
+#: lib/skooog_web/templates/object/index.html.eex:37
 msgid "Delete"
 msgstr ""
 
 #: lib/skooog_web/templates/buyer/index.html.eex:18
-#: lib/skooog_web/templates/object/index.html.eex:32
-#: lib/skooog_web/templates/object/show.html.eex:47
+#: lib/skooog_web/templates/object/index.html.eex:36
+#: lib/skooog_web/templates/object/show.html.eex:57
 msgid "Edit"
 msgstr ""
 
@@ -63,23 +68,26 @@ msgstr ""
 msgid "New Buyer"
 msgstr ""
 
-#: lib/skooog_web/templates/object/index.html.eex:11
-#: lib/skooog_web/templates/object/show.html.eex:30
+#: lib/skooog_web/templates/object/form.html.eex:54
+#: lib/skooog_web/templates/object/index.html.eex:13
+#: lib/skooog_web/templates/object/show.html.eex:40
 msgid "Preliminary volume"
 msgstr ""
 
 #: lib/skooog_web/templates/buyer/index.html.eex:17
-#: lib/skooog_web/templates/object/index.html.eex:31
+#: lib/skooog_web/templates/object/index.html.eex:35
 msgid "Show"
 msgstr ""
 
-#: lib/skooog_web/templates/object/index.html.eex:12
-#: lib/skooog_web/templates/object/show.html.eex:35
+#: lib/skooog_web/templates/object/form.html.eex:60
+#: lib/skooog_web/templates/object/index.html.eex:14
+#: lib/skooog_web/templates/object/show.html.eex:45
 msgid "Sticks"
 msgstr ""
 
-#: lib/skooog_web/templates/object/index.html.eex:13
-#: lib/skooog_web/templates/object/show.html.eex:40
+#: lib/skooog_web/templates/object/form.html.eex:66
+#: lib/skooog_web/templates/object/index.html.eex:15
+#: lib/skooog_web/templates/object/show.html.eex:50
 msgid "Sticks volume"
 msgstr ""
 
@@ -87,11 +95,11 @@ msgstr ""
 msgid "Listing Objects"
 msgstr ""
 
-#: lib/skooog_web/templates/object/index.html.eex:40
+#: lib/skooog_web/templates/object/index.html.eex:44
 msgid "New Object"
 msgstr ""
 
-#: lib/skooog_web/templates/object/show.html.eex:46
+#: lib/skooog_web/templates/object/show.html.eex:56
 msgid "Back"
 msgstr ""
 
@@ -101,4 +109,24 @@ msgstr ""
 
 #: lib/skooog_web/templates/object/show.html.eex:1
 msgid "Show %{type}"
+msgstr ""
+
+#: lib/skooog_web/templates/object/form.html.eex:18
+#: lib/skooog_web/templates/object/index.html.eex:7
+#: lib/skooog_web/templates/object/show.html.eex:10
+msgid "Business Status"
+msgstr ""
+
+#: lib/skooog_web/templates/object/form.html.eex:12
+#: lib/skooog_web/templates/object/index.html.eex:6
+#: lib/skooog_web/templates/object/show.html.eex:5
+msgid "Object Type"
+msgstr ""
+
+#: lib/skooog_web/templates/object/form.html.eex:5
+msgid "Oops, something went wrong!"
+msgstr ""
+
+#: lib/skooog_web/templates/object/form.html.eex:6
+msgid "Please check the errors below."
 msgstr ""

@@ -2,6 +2,16 @@
 
 <ul>
   <li>
+    <strong><%= gettext("Object Type") %>:</strong>
+    <%= @object.type %>
+  </li>
+
+  <li>
+    <strong><%= gettext("Business Status") %>:</strong>
+    <%= @object.business_status %>
+  </li>
+
+  <li>
     <strong><%= gettext("Supplier") %>:</strong>
     <%= @object.supplier %>
   </li>

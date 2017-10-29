@@ -3,6 +3,8 @@
 <table class="table">
   <thead>
     <tr>
+      <th><%= gettext "Object Type" %></th>
+      <th><%= gettext "Business Status" %></th>
       <th><%= gettext "Supplier" %></th>
       <th><%= gettext "Location" %></th>
       <th><%= gettext "Deforestation submission date" %></th>
@@ -18,6 +20,8 @@
   <tbody>
 <%= for object <- @objects do %>
     <tr>
+      <td><%= object.type %></td>
+      <td><%= object.business_status %></td>
       <td><%= object.supplier %></td>
       <td><%= object.location %></td>
       <td><%= object.deforestation_submission_date %></td>
