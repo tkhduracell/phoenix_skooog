@@ -1,5 +1,10 @@
 import EctoEnum
 
+defenum UserType, :user_type, ["SuperAdmin", 
+                               "Admin",
+                               "Internal",
+                               "External"]
+
 defenum ObjectTypeEnum, :object_type, ["Slutavverkning",
                                        "Gallring",
                                        "Risskotning", 
