@@ -32,15 +32,18 @@
     <%= error_tag f, :location %>
   </div>
 
+  <% today = Date.utc_today() %>
+  <% y = today.year %>
+
   <div class="form-group">
     <%= label f, :deforestation_submission_date, gettext("Deforestation submission date"), class: "control-label" %>
-    <div><%= date_select f, :deforestation_submission_date, class: "form-control" %></div>
+    <div><%= date_select f, :deforestation_submission_date, class: "form-control", year: [options: y..(y+2)], default: today %></div>
     <%= error_tag f, :deforestation_submission_date %>
   </div>
 
   <div class="form-group">
     <%= label f, :deforestation_confirmed_date, gettext("Deforestation confirmed date"), class: "control-label" %>
-    <div><%= date_select f, :deforestation_confirmed_date, class: "form-control" %></div>
+    <div><%= date_select f, :deforestation_confirmed_date, class: "form-control", year: [options: y..(y+2)], default: Date.add(today, 42) %></div>
     <%= error_tag f, :deforestation_confirmed_date %>
   </div>
 
