@@ -2,13 +2,13 @@
 msgid "Objects"
 msgstr "Objekt"
 
-#: lib/skooog_web/templates/object/form.html.eex:24
+#: lib/skooog_web/templates/object/form.html.eex:25
 #: lib/skooog_web/templates/object/index.html.eex:8
 #: lib/skooog_web/templates/object/show.html.eex:15
 msgid "Supplier"
 msgstr "Leverantör"
 
-#: lib/skooog_web/templates/object/form.html.eex:30
+#: lib/skooog_web/templates/object/form.html.eex:31
 #: lib/skooog_web/templates/object/index.html.eex:9
 #: lib/skooog_web/templates/object/show.html.eex:20
 msgid "Location"
@@ -22,7 +22,7 @@ msgstr "Välkomen till %{name}"
 msgid "Actors"
 msgstr "Utförare (skotare/skördare)"
 
-#: lib/skooog_web/templates/object/form.html.eex:48
+#: lib/skooog_web/templates/object/form.html.eex:54
 #: lib/skooog_web/templates/object/index.html.eex:12
 #: lib/skooog_web/templates/object/show.html.eex:35
 msgid "Area"
@@ -32,13 +32,13 @@ msgstr "Areal"
 msgid "Buyers"
 msgstr "Köpare"
 
-#: lib/skooog_web/templates/object/form.html.eex:42
+#: lib/skooog_web/templates/object/form.html.eex:48
 #: lib/skooog_web/templates/object/index.html.eex:11
 #: lib/skooog_web/templates/object/show.html.eex:30
 msgid "Deforestation confirmed date"
 msgstr "Hygges anmälan godkänd datum"
 
-#: lib/skooog_web/templates/object/form.html.eex:36
+#: lib/skooog_web/templates/object/form.html.eex:42
 #: lib/skooog_web/templates/object/index.html.eex:10
 #: lib/skooog_web/templates/object/show.html.eex:25
 msgid "Deforestation submission date"
@@ -59,7 +59,7 @@ msgstr "Redigera"
 msgid "New Buyer"
 msgstr "Nya Köpare"
 
-#: lib/skooog_web/templates/object/form.html.eex:54
+#: lib/skooog_web/templates/object/form.html.eex:60
 #: lib/skooog_web/templates/object/index.html.eex:13
 #: lib/skooog_web/templates/object/show.html.eex:40
 msgid "Preliminary volume"
@@ -70,13 +70,13 @@ msgstr "Preliminär Volym"
 msgid "Show"
 msgstr "Visa"
 
-#: lib/skooog_web/templates/object/form.html.eex:60
+#: lib/skooog_web/templates/object/form.html.eex:66
 #: lib/skooog_web/templates/object/index.html.eex:14
 #: lib/skooog_web/templates/object/show.html.eex:45
 msgid "Sticks"
 msgstr "Ris?"
 
-#: lib/skooog_web/templates/object/form.html.eex:66
+#: lib/skooog_web/templates/object/form.html.eex:72
 #: lib/skooog_web/templates/object/index.html.eex:15
 #: lib/skooog_web/templates/object/show.html.eex:50
 msgid "Sticks volume"
@@ -87,9 +87,12 @@ msgid "Listing Objects"
 msgstr "Alla Objekt"
 
 #: lib/skooog_web/templates/object/index.html.eex:44
+#: lib/skooog_web/templates/object/new.html.eex:1
 msgid "New Object"
 msgstr "Nytt Objekt"
 
+#: lib/skooog_web/templates/object/edit.html.eex:5
+#: lib/skooog_web/templates/object/new.html.eex:5
 #: lib/skooog_web/templates/object/show.html.eex:56
 msgid "Back"
 msgstr "Tillbaka"
@@ -102,13 +105,13 @@ msgstr "Objekt"
 msgid "Show %{type}"
 msgstr "Visa %{type}"
 
-#: lib/skooog_web/templates/object/form.html.eex:18
+#: lib/skooog_web/templates/object/form.html.eex:19
 #: lib/skooog_web/templates/object/index.html.eex:7
 #: lib/skooog_web/templates/object/show.html.eex:10
 msgid "Business Status"
 msgstr "Affärs Status"
 
-#: lib/skooog_web/templates/object/form.html.eex:12
+#: lib/skooog_web/templates/object/form.html.eex:13
 #: lib/skooog_web/templates/object/index.html.eex:6
 #: lib/skooog_web/templates/object/show.html.eex:5
 msgid "Object Type"
@@ -121,3 +124,19 @@ msgstr "Oops, något gick snett!"
 #: lib/skooog_web/templates/object/form.html.eex:6
 msgid "Please check the errors below."
 msgstr "Inspektera felen nedan."
+
+#: lib/skooog_web/templates/object/edit.html.eex:1
+msgid "Edit Object"
+msgstr "Redigera Objekt"
+
+#: lib/skooog_web/templates/object/form.html.eex:11
+msgid "Required fields"
+msgstr "Obligatoriska fält"
+
+#: lib/skooog_web/templates/object/form.html.eex:36
+msgid "Optional fields"
+msgstr "Villkorliga fält"
+
+#: lib/skooog_web/templates/object/form.html.eex:78
+msgid "Submit"
+msgstr "Spara"

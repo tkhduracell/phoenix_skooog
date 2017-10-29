@@ -5,6 +5,7 @@
     <tr>
       <th><%= gettext "Object Type" %></th>
       <th><%= gettext "Business Status" %></th>
+      <th><%= gettext "Delegation Status" %></th>
       <th><%= gettext "Supplier" %></th>
       <th><%= gettext "Location" %></th>
       <th><%= gettext "Deforestation submission date" %></th>
@@ -22,10 +23,15 @@
     <tr>
       <td><%= object.type %></td>
       <td><%= object.business_status %></td>
+      <td><%= object.delegation_status %></td>
       <td><%= object.supplier %></td>
       <td><%= object.location %></td>
       <td><%= object.deforestation_submission_date %></td>
-      <td><%= object.deforestation_confirmed_date %></td>
+      <td>
+        <%= if object.deforestation_submission_date do 
+            Date.add(object.deforestation_submission_date, 42) 
+        end %>
+      </td>
       <td><%= object.area %></td>
       <td><%= object.preliminary_volume %></td>
       <td><%= object.sticks %></td>

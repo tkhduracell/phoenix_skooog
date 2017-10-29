@@ -10,6 +10,11 @@
     <strong><%= gettext("Business Status") %>:</strong>
     <%= @object.business_status %>
   </li>
+  
+  <li>
+    <strong><%= gettext("Delegation Status") %>:</strong>
+    <%= @object.delegation_status %>
+  </li>
 
   <li>
     <strong><%= gettext("Supplier") %>:</strong>
@@ -21,15 +26,17 @@
     <%= @object.location %>
   </li>
 
-  <li>
-    <strong><%= gettext("Deforestation submission date") %>:</strong>
-    <%= @object.deforestation_submission_date %>
-  </li>
-
-  <li>
-    <strong><%= gettext("Deforestation confirmed date") %>:</strong>
-    <%= @object.deforestation_confirmed_date %>
-  </li>
+  <% if @object.deforestation_submission_date do %>
+    <li>
+      <strong><%= gettext("Deforestation submission date") %>:</strong>
+      <%= @object.deforestation_submission_date %>
+    </li>
+  
+    <li>
+      <strong><%= gettext("Deforestation confirmed date") %>:</strong>
+      <%= Date.add(@object.deforestation_submission_date, 42) %>
+    </li>
+  <% end %>
 
   <li>
     <strong><%= gettext("Area") %>:</strong>

@@ -2,14 +2,14 @@ defmodule Skooog.Repo.Migrations.CreateObjects do
   use Ecto.Migration
 
   def change do
-    ObjectBusinessStatusEnum.create_type
     ObjectTypeEnum.create_type
+    ObjectBusinessStatusEnum.create_type
+    ObjectDelegationStatusEnum.create_type
     
     create table(:objects) do
       add :type, :object_type
       add :business_status, :object_business_status
-      
-      add :buyer_id, references(:buyers, on_delete: :nothing)
+      add :delegation_status, :object_delegation_status
       
       add :supplier, :string
       add :location, :string
@@ -22,13 +22,12 @@ defmodule Skooog.Repo.Migrations.CreateObjects do
 
       timestamps()
     end
-
-    create index(:objects, [:buyer_id])
   end
 
   def down do
-    ObjectBusinessStatusEnum.drop_type
     ObjectTypeEnum.drop_type
+    ObjectBusinessStatusEnum.drop_type
+    ObjectDelegationStatusEnum.drop_type
   end
 
 end

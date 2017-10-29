@@ -8,6 +8,7 @@
     </div>
   <% end %>
 
+  <h3><%= gettext "Required fields" %></h3>
   <div class="form-group">
     <%= label f, :type, gettext("Object Type"), class: "control-label" %>
     <%= select f, :type, ObjectTypeEnum.__enum_map__(), class: "form-control" %>
@@ -18,6 +19,12 @@
     <%= label f, :business_status, gettext("Business Status"), class: "control-label" %>
     <%= select f, :business_status, ObjectBusinessStatusEnum.__enum_map__(), class: "form-control" %>
     <%= error_tag f, :business_status %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :delegation_status, gettext("Delegation Status"), class: "control-label" %>
+    <%= select f, :delegation_status, ObjectDelegationStatusEnum.__enum_map__(), class: "form-control" %>
+    <%= error_tag f, :delegation_status %>
   </div>
 
   <div class="form-group">
@@ -32,19 +39,15 @@
     <%= error_tag f, :location %>
   </div>
 
+  <h3><%= gettext "Optional fields" %></h3>
+
   <% today = Date.utc_today() %>
   <% y = today.year %>
 
   <div class="form-group">
     <%= label f, :deforestation_submission_date, gettext("Deforestation submission date"), class: "control-label" %>
-    <div><%= date_select f, :deforestation_submission_date, class: "form-control", year: [options: y..(y+2)], default: today %></div>
+    <div><%= date_select f, :deforestation_submission_date, class: "form-control", year: [prompt: "", options: y..(y+2)], month: [prompt: ""], day: [prompt: ""] %></div>
     <%= error_tag f, :deforestation_submission_date %>
-  </div>
-
-  <div class="form-group">
-    <%= label f, :deforestation_confirmed_date, gettext("Deforestation confirmed date"), class: "control-label" %>
-    <div><%= date_select f, :deforestation_confirmed_date, class: "form-control", year: [options: y..(y+2)], default: Date.add(today, 42) %></div>
-    <%= error_tag f, :deforestation_confirmed_date %>
   </div>
 
   <div class="form-group">
@@ -72,6 +75,6 @@
   </div>
 
   <div class="form-group">
-    <%= submit "Submit", class: "btn btn-primary" %>
+    <%= submit gettext("Submit"), class: "btn btn-primary" %>
   </div>
 <% end %>
