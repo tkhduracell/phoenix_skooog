@@ -1,0 +1,13 @@
+<%= case Guardian.Plug.current_resource(@conn) do %>
+    <% %Skooog.Auth.User{username: username, type: type} -> %>
+    <p class="pull-right">
+        <%= gettext "You are logged in as" %>
+        <b><%= username %></b> (<%= type %>)<br>
+        <%= link gettext("Logout"), to: session_path(@conn, :delete), method: "delete", class: "btn btn-xs btn-primary btn-glyphicon btn-glyphicon-log-out"%>
+    </p>
+    <% _ -> %>
+    <p class="pull-right">
+        <%= gettext "You are NOT logged in" %><br>
+        <%= button(gettext("Log in"), to: session_path(@conn, :new), method: "get", class: "btn btn-xs btn-primary btn-glyphicon btn-glyphicon-log-in") %>
+    </p>
+<% end %>

@@ -1,0 +1,29 @@
+<h2>Listing Users</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th><%= gettext "Username" %></th>
+      <th><%= gettext "Type" %></th>
+      <th><%= gettext "Crypted password" %></th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for user <- @users do %>
+    <tr>
+      <td><%= user.username %></td>
+      <td><%= user.type %></td>
+      <td>••••••••••••</td>
+
+      <td class="text-right">
+        <span><%= link gettext("Edit"), to: user_path(@conn, :edit, user), class: "btn btn-default btn-xs" %></span>
+        <span><%= link gettext("Delete"), to: user_path(@conn, :delete, user), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link gettext("New User"), to: user_path(@conn, :new), class: "btn btn-primary" %></span>

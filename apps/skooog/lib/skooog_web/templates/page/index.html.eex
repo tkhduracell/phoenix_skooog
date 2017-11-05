@@ -1,0 +1,54 @@
+<div class="jumbotron">
+  <h2><%= gettext "Welcome to %{name}!", name: "Skooog" %></h2>
+  <p class="lead">
+    A productive forestery framework that<br />
+    does not compromise speed and maintainability.
+  </p>
+</div>
+
+<div class="row">
+  <div class="col-lg-6">
+    <%= case Guardian.Plug.current_resource(@conn) do %>
+      <% %Skooog.Auth.User{username: username, type: type} -> %>
+        <h3><%= gettext("Welcome %{name}!", name: username) %></h3>
+        <img src="http://thecatapi.com/api/images/get?format=src&type=gif" width="100%" class="img img-responsive catgif">
+      <% _ -> %>
+        <p>
+          <%= gettext "You are not logged in, please " %>
+          <%= link gettext("log in"), to: session_path(@conn, :new), method: "get", class: "btn btn-glyphicon btn-glyphicon-log-in" %>.
+        </p>
+    <% end %>
+    
+  </div>
+
+  <div class="col-lg-6">
+
+    <%= if logged_in(@conn) do %>
+      <h3><%= gettext("Manage") %></h3>
+      <ul>
+        <li>
+          <%= button gettext("Objects"), to: object_path(@conn, :index), method: "get", class: "btn btn-success btn-glyphicon btn-glyphicon-edit" %>
+        </li>
+        <li>
+          <%= button gettext("Actors"), to: actor_path(@conn, :index), method: "get", class: "btn btn-success btn-glyphicon btn-glyphicon-tree-conifer" %>
+        </li>
+        <li>
+          <%= button gettext("Users"), to: user_path(@conn, :index), method: "get", class: "btn btn-success btn-glyphicon btn-glyphicon-user" %>
+        </li>
+      </ul>
+    <% end %>
+
+    <h3>Resources</h3>
+    <ul>
+      <li>
+        <a href="http://phoenixframework.org/docs/overview">Guides</a>
+      </li>
+      <li>
+        <a href="https://hexdocs.pm/phoenix">Docs</a>
+      </li>
+      <li>
+        <a href="https://github.com/phoenixframework/phoenix">Source</a>
+      </li>
+    </ul>
+  </div>
+</div>

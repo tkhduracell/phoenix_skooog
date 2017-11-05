@@ -1,3 +1,23 @@
-db/
-
 *.env
+
+# App artifacts
+/_build
+/db
+/deps
+/*.ez
+
+# Generated on crash by the VM
+erl_crash.dump
+
+# Generated on crash by NPM
+npm-debug.log
+
+/doc
+/tmp
+/node_modules
+
+/installer/_build
+/installer/tmp
+
+.elixir_ls/
+.vscode/

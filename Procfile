@@ -1,1 +1,1 @@
-web: cd skooog && mix deps.get --only prod && mix local.rebar --force && MIX_ENV=prod mix phoenix.server --no-halt
+web: cd apps/skooog && mix deps.get --only prod && mix local.rebar --force && MIX_ENV=prod mix phoenix.server --no-halt

@@ -1,0 +1,29 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= label f, gettext("Username"), class: "control-label" %>
+    <%= text_input f, :username, class: "form-control" %>
+    <%= error_tag f, :username %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, gettext("User Type"), class: "control-label" %>
+    <%= select f, :type, UserTypeEnum.__enum_map__(), class: "form-control" %>
+    <%= error_tag f, :type %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, gettext("Password"), class: "control-label" %>
+    <%= password_input f, :password, class: "form-control" %>
+    <%= error_tag f, :password %>
+  </div>
+
+  <div class="form-group">
+    <%= submit "Submit", class: "btn btn-primary" %>
+  </div>
+<% end %>

@@ -1,10 +1,10 @@
-defmodule Umbrella.Mixfile do
+defmodule Root.Mixfile do
   use Mix.Project
 
   def project do
     [
-      apps_path: ".",
-      apps: [:skooog],
+      apps_path: "apps",
+      build_embedded: Mix.env == :prod,
       start_permanent: Mix.env == :prod,
       deps: deps()
     ]
