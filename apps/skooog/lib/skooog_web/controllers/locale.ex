@@ -5,13 +5,15 @@ defmodule SkooogWeb.Locale do
 
   def call(conn, _opts) do
     case conn.params["locale"] || get_session(conn, :locale) do
-      nil     -> 
-        locale = "sv_SE"
-        Gettext.put_locale(SkooogWeb.Gettext, locale)
-        conn |> put_session(:locale, locale)
       locale  ->
         Gettext.put_locale(SkooogWeb.Gettext, locale)
         conn |> put_session(:locale, locale)
+      
+      _ -> 
+        locale = "sv_SE"
+        Gettext.put_locale(SkooogWeb.Gettext, locale)
+        conn |> put_session(:locale, locale)
+      
     end
   end
 end
